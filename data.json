@@ -1,0 +1,22 @@
+{
+  "brandCounts": {
+    "labels": ["Dell", "HP", "Lenovo", "Apple", "Asus", "Acer", "MSI"],
+    "values": [780, 720, 690, 420, 380, 330, 200]
+  },
+  "ramDistribution": {
+    "labels": ["4GB", "8GB", "12GB", "16GB", "32GB"],
+    "values": [260, 1680, 520, 980, 180]
+  },
+  "cpuCounts": {
+    "labels": ["Intel i3", "Intel i5", "Intel i7", "Ryzen 5", "Ryzen 7", "Apple M1/M2"],
+    "values": [410, 1380, 940, 520, 340, 220]
+  },
+  "storageRatio": {
+    "ssd": 2700,
+    "hdd": 1276
+  },
+  "resolutionPopularity": {
+    "labels": ["1366x768", "1600x900", "1920x1080", "2560x1600", "2880x1800", "3840x2160"],
+    "values": [620, 260, 1960, 430, 180, 200]
+  }
+}

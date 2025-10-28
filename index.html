@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Data Analysis Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">💻 Laptop Data Analysis</div>
+        <div class="links"> 
+            <a href="#overview">Overview</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header id="overview" class="hero">
+        <div class="hero-content">
+            <h1>Laptop Data Analysis</h1>
+            <p>Explore brand distribution, memory configurations, CPU trends, storage ratios, and screen resolutions with a modern, animated dashboard.</p>
+        </div>
+    </header>
+
+    <section class="container content">
+        <div class="info-section reveal">
+            <h2>📊 Overview</h2>
+            <p>This project analyzes specifications of 3,976 laptops from various brands. Using Python and Google Colab, it explores features like company, CPU, GPU, RAM, storage, screen resolution, and operating system to uncover key insights and market trends.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-section reveal">
+                <h2>🧠 Objectives</h2>
+                <ul>
+                    <li>Explore laptop configurations across brands</li>
+                    <li>Analyze hardware distributions (RAM, CPU, GPU, etc.)</li>
+                    <li>Identify performance trends and feature relationships</li>
+                    <li>Visualize insights with interactive charts</li>
+                </ul>
+            </div>
+
+            <div class="info-section reveal">
+                <h2>🧩 Dataset Description</h2>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Column</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Company</td><td>Laptop brand name</td></tr>
+                            <tr><td>TypeName</td><td>Model type (Notebook, Gaming, Ultrabook, etc.)</td></tr>
+                            <tr><td>Inches</td><td>Display size in inches</td></tr>
+                            <tr><td>ScreenResolution</td><td>Resolution of display (e.g., 1920x1080)</td></tr>
+                            <tr><td>Cpu</td><td>Processor model and speed</td></tr>
+                            <tr><td>Ram</td><td>RAM size in GB</td></tr>
+                            <tr><td>Memory</td><td>Storage details (HDD/SSD capacity)</td></tr>
+                            <tr><td>Gpu</td><td>Graphics card details</td></tr>
+                            <tr><td>OpSys</td><td>Operating system used</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-section reveal">
+                <h2>⚙️ Tech Stack</h2>
+                <ul>
+                    <li>Python (Google Colab)</li>
+                    <li>Pandas & NumPy – Data cleaning and preprocessing</li>
+                    <li>Matplotlib & Seaborn – Static visualizations</li>
+                    <li>Plotly – Interactive dashboards</li>
+                </ul>
+            </div>
+            <div class="info-section reveal">
+                <h2>🧹 Steps Performed</h2>
+                <h3>Data Preprocessing</h3>
+                <ul>
+                    <li>Cleaned column names and handled missing data</li>
+                    <li>Converted RAM and Memory into numeric formats</li>
+                    <li>Extracted screen resolution width & height</li>
+                    <li>Created HDD/SSD features for analysis</li>
+                </ul>
+                <h3>Exploratory Data Analysis (EDA)</h3>
+                <ul>
+                    <li>Brand-wise comparison and RAM analysis</li>
+                    <li>Popular CPU, GPU, and OS trends</li>
+                    <li>Correlation heatmap for numeric features</li>
+                </ul>
+                <h3>Visualization</h3>
+                <ul>
+                    <li>Brand distribution</li>
+                    <li>RAM and screen size analysis</li>
+                    <li>Interactive charts using Plotly</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-section reveal">
+                <h2>📈 Key Insights</h2>
+                <ul>
+                    <li>💻 Dell, HP, and Lenovo dominate the laptop market</li>
+                    <li>⚙️ 8GB RAM is the most common configuration</li>
+                    <li>💾 SSD-based laptops are rapidly replacing HDDs</li>
+                    <li>🧠 Full HD screens are the most popular resolution</li>
+                    <li>🔍 RAM and storage type strongly influence configurations</li>
+                </ul>
+            </div>
+            <div class="info-section reveal">
+                <h2>🧭 Future Enhancements</h2>
+                <ul>
+                    <li>Add price-based analysis</li>
+                    <li>Build a Streamlit dashboard for real-time exploration</li>
+                    <li>Use machine learning to predict laptop prices</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-section reveal">
+            <h2>🚀 How to Run</h2>
+            <ol>
+                <li>Open Google Colab</li>
+                <li>Upload <code>laptop_data.csv</code></li>
+                <li>Run each cell in the provided notebook</li>
+                <li>Explore visualizations and insights interactively</li>
+            </ol>
+            <p class="keywords">🏷️ Keywords: Data Analysis • EDA • Laptop Dataset • Python • Visualization • Plotly • Google Colab</p>
+            <p class="author">📌 Author: <strong>Saiprushna Odnam</strong> &nbsp;|&nbsp; 📅 Year: <strong>2025</strong></p>
+        </div>
+    </section>
+
+    <main id="dashboard" class="dashboard container">
+        <section class="card">
+            <h2>Brand Distribution</h2>
+            <div id="brandChart" class="chart"></div>
+        </section>
+        <section class="card">
+            <h2>RAM Size Distribution</h2>
+            <div id="ramChart" class="chart"></div>
+        </section>
+        <section class="card">
+            <h2>CPU Type vs Count</h2>
+            <div id="cpuChart" class="chart"></div>
+        </section>
+        <section class="card">
+            <h2>SSD vs HDD Ratio</h2>
+            <div id="storageChart" class="chart"></div>
+        </section>
+        <section class="card full">
+            <h2>Screen Resolution Popularity</h2>
+            <div id="resolutionChart" class="chart"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section id="contact" class="contact container">
+            <h2>Get in touch</h2>
+            <p class="quote">“Data is a precious thing and will last longer than the systems themselves.”</p>
+            <p class="author-line">— Saiprushna Odnam • B.Tech CSE (Data Science)</p>
+            <form id="contactForm" class="contact-form" onsubmit="return false;">
+                <input type="text" id="name" placeholder="Your name" required />
+                <input type="email" id="email" placeholder="Your email" required />
+                <textarea id="message" rows="4" placeholder="Your message"></textarea>
+                <button type="submit" class="btn">Send</button>
+                <span id="formStatus" class="status"></span>
+            </form>
+        </section>
+        <p>Saiprushna Odnam – Laptop Data Analysis Project (2025)</p>
+    </footer>
+
+    <script src="threebg.js"></script>
+    <script src="app.js"></script>
+</body>
+<!-- Optional: place data.json in this folder to override sample data -->
+</html>
+
+

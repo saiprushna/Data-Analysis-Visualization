@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Data Analysis - Chart.js Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); backdrop-filter: blur(10px); }
+      .glow { box-shadow: 0 0 24px rgba(124,240,255,0.22); }
+      .toolbar { display:flex; align-items:center; gap:10px; margin:8px 0 0; }
+      .btn { background: linear-gradient(135deg, #00ffa3, #7cf0ff); color:#061824; border:none; padding:8px 12px; border-radius:10px; font-weight:800; cursor:pointer; transition: transform .15s ease, box-shadow .2s ease; }
+      .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,255,163,.25); }
+      .spinner { width:26px; height:26px; border:3px solid rgba(255,255,255,.18); border-top-color:#7cf0ff; border-radius:50%; animation: spin 1s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      canvas { width:100% !important; height:320px !important; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">💻 Laptop Data Analysis (Chart.js)</div>
+        <div class="links">
+            <a href="index.html">Plotly Dashboard</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Interactive Laptop Insights</h1>
+            <p>Animated charts for brands, RAM, CPUs, storage, resolutions, and RAM vs screen size using Chart.js.</p>
+            <div class="toolbar">
+                <button id="refreshBtn" class="btn">Refresh Data</button>
+                <div id="spinner" class="spinner" style="display:none"></div>
+            </div>
+        </div>
+    </header>
+
+    <main id="dashboard" class="dashboard container">
+        <section class="card glass glow"><h2>Brand Distribution</h2><canvas id="brandPie"></canvas></section>
+        <section class="card glass glow"><h2>RAM Size Distribution</h2><canvas id="ramBar"></canvas></section>
+        <section class="card glass glow"><h2>CPU Popularity</h2><canvas id="cpuHBar"></canvas></section>
+        <section class="card glass glow"><h2>SSD vs HDD Comparison</h2><canvas id="storageDoughnut"></canvas></section>
+        <section class="card glass glow full"><h2>Screen Resolution vs Count</h2><canvas id="resolutionLine"></canvas></section>
+        <section class="card glass glow full"><h2>RAM vs Screen Size</h2><canvas id="ramVsInchesScatter"></canvas></section>
+    </main>
+
+    <footer class="footer">
+        <section id="contact" class="contact container">
+            <h2>Get in touch</h2>
+            <p class="quote">“Data is a precious thing and will last longer than the systems themselves.”</p>
+            <p class="author-line">— Saiprushna Odnam • B.Tech CSE (Data Science)</p>
+            <form id="contactForm" class="contact-form" onsubmit="return false;">
+                <input type="text" id="name" placeholder="Your name" required />
+                <input type="email" id="email" placeholder="Your email" required />
+                <textarea id="message" rows="4" placeholder="Your message"></textarea>
+                <button type="submit" class="btn">Send</button>
+                <span id="formStatus" class="status"></span>
+            </form>
+        </section>
+        <p>Saiprushna Odnam – Laptop Data Analysis Project (2025)</p>
+    </footer>
+
+    <script src="threebg.js"></script>
+    <script src="chartjs.js"></script>
+</body>
+</html>
+
+
